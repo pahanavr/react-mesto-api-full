@@ -1,0 +1,20 @@
+.profile__avatar-box {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin-right: 30px;
+    transition: ease-in-out 0.3s;
+}
+
+.profile__avatar-box:hover {
+    transition: ease-in-out 0.3s;
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 880px) {
+    .profile__avatar-box {
+        margin-right: 0;
+        margin-bottom: 22px;
+    }
+}
