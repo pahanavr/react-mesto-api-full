@@ -1,5 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const {
   celebrate,
@@ -20,7 +21,6 @@ const {
   requestLogger,
   errorLogger,
 } = require('./middlewares/logger');
-const cors = require('./middlewares/cors');
 
 const {
   PORT = 3000,
@@ -28,7 +28,10 @@ const {
 
 const app = express();
 
-app.use(cors);
+app.use(cors({
+  origin: 'https://mesto.pahanavr.nomoredomains.icu/',
+  credentials: true,
+}));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
