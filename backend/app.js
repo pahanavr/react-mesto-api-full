@@ -28,7 +28,7 @@ const {
 
 const app = express();
 
-app.use(cors({
+app.use('*', cors({
   origin: [
     'https://mesto.pahanavr.nomoredomains.icu/',
     'http://mesto.pahanavr.nomoredomains.icu/',
