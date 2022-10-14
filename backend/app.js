@@ -42,8 +42,6 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useUnifiedTopology: true,
 });
 
-app.use(cors);
-
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
@@ -51,6 +49,8 @@ app.get('/crash-test', () => {
 });
 
 app.use(requestLogger);
+
+app.use(cors());
 
 app.post('/signup', celebrate({
   body: Joi.object().keys({
