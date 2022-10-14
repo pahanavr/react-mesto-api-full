@@ -6,7 +6,6 @@ const {
   Joi,
   errors,
 } = require('celebrate');
-const cors = require('cors');
 const routerUsers = require('./routes/users');
 const routerCards = require('./routes/cards');
 const {
@@ -14,19 +13,14 @@ const {
   createUser,
 } = require('./controllers/users');
 const auth = require('./middlewares/auth');
-const {
-  regex,
-  allowedCors,
-} = require('./utils/constants');
-const {
-  handleError,
-} = require('./middlewares/handleError');
+const { regex } = require('./utils/constants');
+const { handleError } = require('./middlewares/handleError');
 const NotFoundError = require('./errors/notFoundErrors');
 const {
   requestLogger,
   errorLogger,
 } = require('./middlewares/logger');
-// const cors = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 
 const {
   PORT = 3000,
@@ -34,7 +28,7 @@ const {
 
 const app = express();
 
-app.use('*', cors(allowedCors));
+app.use(cors);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

@@ -8,15 +8,6 @@ const SERVER_ERROR = 500;
 
 const regex = /https?:\/\/(www\.)?[\w-.]+\.[a-z]{2,3}[\w-.~:/?#[\]@!$&'()*+,;=]*#?/;
 
-const allowedCors = {
-  origin: [
-  'https://mesto.pahanavr.nomoredomains.icu/',
-  'http://mesto.pahanavr.nomoredomains.icu/',
-  'localhost:3000'
-  ],
-  credentials: true,
-};
-
 module.exports = {
   OK,
   BAD_REQUEST,
@@ -26,5 +17,4 @@ module.exports = {
   SAME_EMAIL,
   SERVER_ERROR,
   regex,
-  allowedCors,
 };
