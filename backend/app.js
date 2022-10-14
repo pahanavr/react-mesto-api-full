@@ -32,6 +32,8 @@ const {
 
 const app = express();
 
+app.use(cors);
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true,
@@ -49,8 +51,6 @@ app.get('/crash-test', () => {
 });
 
 app.use(requestLogger);
-
-app.use(cors());
 
 app.post('/signup', celebrate({
   body: Joi.object().keys({
