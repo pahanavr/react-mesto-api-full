@@ -76,7 +76,7 @@ export default function App() {
         if (res) {
           setIsSuccess(true);
           setIsInfoTooltipPopupOpen(true);
-          history.push("/sign-in");
+          history.push("/signin");
           console.log("register");
         }
       })
@@ -90,7 +90,7 @@ export default function App() {
   const onSignOut = () => {
     localStorage.removeItem("jwt");
     setLoggedIn(false);
-    history.push("/sign-in");
+    history.push("/signin");
   };
 
   const onLogin = ({ email, password }) => {
@@ -227,17 +227,17 @@ export default function App() {
             onCardLike={handleCardLike}
             onCardDelete={handleDeleteCard}
           />
-          <Route path="/sign-up">
+          <Route path="/signup">
             <Register onRegister={onRegister} />
           </Route>
-          <Route path="/sign-in">
+          <Route path="/signin">
             <Login onLogin={onLogin} />
           </Route>
           <Route>
             {loggedIn ? 
               <Redirect to="/users/me" />
             :
-              <Redirect to="/sign-in" />
+              <Redirect to="/signin" />
             }
           </Route>
         </Switch>

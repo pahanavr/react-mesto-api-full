@@ -20,7 +20,7 @@ export default function Register({ onRegister }) {
 
   useEffect(() => {
     if (localStorage.getItem("jwt")) {
-      history.push("/sign-in");
+      history.push("/signin");
     }
   }, []);
 
@@ -47,7 +47,7 @@ export default function Register({ onRegister }) {
         <button className="register__button">Зарегистрироваться</button>
         <p className="register__text">
           Уже зарегистрированы?
-          <Link to="/sign-in" className="register__link">
+          <Link to="/signin" className="register__link">
             &nbsp;Войти
           </Link>
         </p>
