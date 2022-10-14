@@ -29,7 +29,11 @@ const {
 const app = express();
 
 app.use(cors({
-  origin: 'https://mesto.pahanavr.nomoredomains.icu/',
+  origin: [
+    'https://mesto.pahanavr.nomoredomains.icu/',
+    'http://mesto.pahanavr.nomoredomains.icu/',
+    'localhost:3000',
+  ],
   credentials: true,
 }));
 
