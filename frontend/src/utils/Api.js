@@ -42,8 +42,8 @@ class Api {
   addNewCard(item) {
     return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
-      headers: this._headers,
       credentials: "include",
+      headers: this._headers,
       body: JSON.stringify({
         name: item.name,
         link: item.link,
@@ -54,32 +54,32 @@ class Api {
   likeCard(_id) {
     return fetch(`${this._baseUrl}/cards/${_id}/likes/`, {
       method: "PUT",
-      headers: this._headers,
       credentials: "include",
+      headers: this._headers,
     }).then(this._checkResponse);
   }
 
   deleteLikeCard(_id) {
     return fetch(`${this._baseUrl}/cards/${_id}/likes/`, {
       method: "DELETE",
-      headers: this._headers,
       credentials: "include",
+      headers: this._headers,
     }).then(this._checkResponse);
   }
 
   deleteCard(_id) {
     return fetch(`${this._baseUrl}/cards/${_id}`, {
       method: "DELETE",
-      headers: this._headers,
       credentials: "include",
+      headers: this._headers,
     }).then(this._checkResponse);
   }
 
   changeAvatar(data) {
     return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: this._headers,
       credentials: "include",
+      headers: this._headers,
       body: JSON.stringify({
         avatar: data.avatar,
       }),
@@ -90,7 +90,6 @@ class Api {
 const api = new Api({
   baseUrl: "https://api.mesto.pahanavr.nomoredomains.icu",
   headers: {
-    authorization: "8eed5c67-fa9a-4d29-83a2-8bfe636f87ce",
     "Content-Type": "application/json",
   },
 });

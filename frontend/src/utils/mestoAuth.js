@@ -3,11 +3,11 @@ const baseUrl = 'https://api.mesto.pahanavr.nomoredomains.icu';
 export const register = (email, password) => {
   return fetch(`${baseUrl}/signup`, {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    credentials: 'include',
     body: JSON.stringify({email, password})
   })
   .then((res) => {
@@ -25,11 +25,11 @@ export const register = (email, password) => {
 export const authorize = (email, password) => {
   return fetch(`${baseUrl}/signin`, {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    credentials: 'include',
     body: JSON.stringify({email, password})
   })
   .then((res) => {
@@ -53,12 +53,12 @@ export const authorize = (email, password) => {
 export const getContent = (token) => {
   return fetch(`${baseUrl}/users/me`, {
     method: 'GET',
+    credentials: 'include',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
       'Authorization': `Bearer ${token}`,
     },
-    credentials: 'include',
   })
   .then(res => {if (res.ok) { 
     return res.json(); 
