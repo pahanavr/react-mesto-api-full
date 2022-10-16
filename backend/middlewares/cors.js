@@ -1,6 +1,6 @@
 const allowedCors = [
-  'https://mesto.pahanavr.nomoredomains.icu/',
-  'http://mesto.pahanavr.nomoredomains.icu/',
+  'https://mesto.pahanavr.nomoredomains.icu',
+  'http://mesto.pahanavr.nomoredomains.icu',
   'localhost:3000',
 ];
 
