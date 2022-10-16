@@ -1,12 +1,12 @@
-const baseUrl = 'https://api.mesto.pahanavr.nomoredomains.icu';
+const baseUrl = "https://api.mesto.pahanavr.nomoredomains.icu";
 
 export const register = (email, password) => {
   return fetch(`${baseUrl}/signup`, {
-    method: 'POST',
-    credentials: 'include',
+    method: "POST",
+    credentials: "include",
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      "Accept": "application/json",
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({email, password})
   })
@@ -24,11 +24,11 @@ export const register = (email, password) => {
 
 export const authorize = (email, password) => {
   return fetch(`${baseUrl}/signin`, {
-    method: 'POST',
-    credentials: 'include',
+    method: "POST",
+    credentials: "include",
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      "Accept": "application/json",
+      "Content-Type": "application/json"
     },
     body: JSON.stringify({email, password})
   })
@@ -39,9 +39,9 @@ export const authorize = (email, password) => {
     return Promise.reject(`Ошибка: ${res.status}`); 
   })
   .then((data) => {
-    console.log('data: ', data);
+    console.log("data: ", data);
     if (data.token){
-      localStorage.setItem('jwt', data.token);
+      localStorage.setItem("jwt", data.token);
       return data;
     } else {
       return;
@@ -52,12 +52,12 @@ export const authorize = (email, password) => {
 
 export const getContent = (token) => {
   return fetch(`${baseUrl}/users/me`, {
-    method: 'GET',
-    credentials: 'include',
+    method: "GET",
+    credentials: "include",
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`,
+      "Accept": "application/json",
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${token}`,
     },
   })
   .then(res => {if (res.ok) { 

@@ -90,6 +90,7 @@ class Api {
 const api = new Api({
   baseUrl: "https://api.mesto.pahanavr.nomoredomains.icu",
   headers: {
+    authorization: "8eed5c67-fa9a-4d29-83a2-8bfe636f87ce",
     "Content-Type": "application/json",
   },
 });
