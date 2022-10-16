@@ -31,6 +31,7 @@ const app = express();
 
 app.use(cors({
   origin: 'https://mesto.pahanavr.nomoredomains.icu',
+  allowedHeaders: 'Content-Type',
   credentials: true,
 }));
 
