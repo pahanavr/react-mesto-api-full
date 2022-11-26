@@ -24,7 +24,7 @@ const {
 } = require('./middlewares/logger');
 
 const {
-  PORT = 3000,
+  PORT = 3001,
 } = process.env;
 
 const app = express();
