@@ -1,7 +1,7 @@
 const allowedCors = [
   'https://mesto.pahanavr.nomoredomains.club',
   'http://mesto.pahanavr.nomoredomains.club',
-  'localhost:3000',
+  'localhost:3001',
 ];
 
 module.exports.cors = (req, res, next) => {
