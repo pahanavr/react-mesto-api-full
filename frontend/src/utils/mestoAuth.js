@@ -1,4 +1,4 @@
-const baseUrl = "https://api.mesto.pahanavr.nomoredomains.icu";
+const baseUrl = "https://api.mesto.pahanavr.nomoredomains.club";
 
 export const register = (email, password) => {
   return fetch(`${baseUrl}/signup`, {

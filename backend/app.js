@@ -30,7 +30,7 @@ const {
 const app = express();
 
 app.use(cors({
-  origin: 'https://mesto.pahanavr.nomoredomains.icu',
+  origin: 'https://mesto.pahanavr.nomoredomains.club',
   credentials: true,
 }));
 
