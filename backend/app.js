@@ -7,7 +7,7 @@ const {
   Joi,
   errors,
 } = require('celebrate');
-const cors = require('./middlewares/cors');
+const { cors } = require('./middlewares/cors');
 const routerUsers = require('./routes/users');
 const routerCards = require('./routes/cards');
 const {
