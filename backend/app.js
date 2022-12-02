@@ -1,13 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
-// const cors = require('cors');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const {
   celebrate,
   Joi,
   errors,
 } = require('celebrate');
-const { cors } = require('./middlewares/cors');
+// const { cors } = require('./middlewares/cors');
 const routerUsers = require('./routes/users');
 const routerCards = require('./routes/cards');
 const {
@@ -29,12 +29,12 @@ const {
 
 const app = express();
 
-// app.use(cors({
-//   origin: 'https://mesto.pahanavr.nomoredomains.club',
-//   credentials: true,
-// }));
+app.use(cors({
+  origin: '*',
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
-app.use(cors);
+// app.use(cors);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
