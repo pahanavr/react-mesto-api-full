@@ -34,9 +34,9 @@ export default function App() {
   const auth = async (jwt) => {
     return mestoAuth.getContent(jwt).then((res) => {
       if (res) {
-        console.log(res.data.email)
+        console.log(res.email)
         setLoggedIn(true);
-        setEmail(res.data.email);
+        setEmail(res.email);
         history.push("/");
       }
     });
@@ -125,7 +125,8 @@ export default function App() {
   }, [loggedIn]);
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some((i) => i._id === currentUser._id);
+    const isLiked = card.likes.some((i) => i === currentUser._id);
+    console.log(isLiked)
     const like = isLiked
       ? api.deleteLikeCard(card._id)
       : api.likeCard(card._id);

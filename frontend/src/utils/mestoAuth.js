@@ -1,4 +1,5 @@
-const baseUrl = "https://api.mesto.pahanavr.nomoredomains.club";
+// const baseUrl = "https://api.mesto.pahanavr.nomoredomains.club";
+const baseUrl = "http://localhost:3001";
 
 export const register = (email, password) => {
   return fetch(`${baseUrl}/signup`, {
@@ -36,11 +37,11 @@ export const authorize = (email, password) => {
     } 
     return Promise.reject(`Ошибка: ${res.status}`); 
   })
-  .then((data) => {
-    console.log("data: ", data);
-    if (data.token){
-      localStorage.setItem("jwt", data.token);
-      return data;
+  .then((res) => {
+    console.log("data: ", res);
+    if (res.token){
+      localStorage.setItem("jwt", res.token);
+      return res;
     } else {
       return;
     }

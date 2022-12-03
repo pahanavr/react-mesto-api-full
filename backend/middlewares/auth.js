@@ -15,11 +15,10 @@ module.exports = (req, res, next) => {
 
   try {
     payload = jwt.verify(token, 'secret-key');
+    req.user = payload;
   } catch (err) {
     return next(new BadAuth('Необходима авторизация'));
   }
-
-  req.user = payload;
 
   next();
   return false;

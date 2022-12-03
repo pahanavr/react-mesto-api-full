@@ -7,7 +7,6 @@ const {
   Joi,
   errors,
 } = require('celebrate');
-// const { cors } = require('./middlewares/cors');
 const routerUsers = require('./routes/users');
 const routerCards = require('./routes/cards');
 const {
@@ -33,8 +32,6 @@ app.use(cors({
   origin: '*',
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
-
-// app.use(cors);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
