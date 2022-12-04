@@ -1,3 +1,4 @@
+require('dotenv').config();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const SameEmailError = require('../errors/sameEmailError');
@@ -18,12 +19,12 @@ module.exports.login = (req, res, next) => {
   return User.findOne({ email }).select('+password')
     .then((user) => {
       if (!user) {
-        return next(new BadAuth('Неправильные данные'));
+        throw new BadAuth('Неправильные данные');
       }
       return bcrypt.compare(password, user.password)
         .then((matched) => {
           if (!matched) {
-            return next(new BadAuth('Неправильные данные'));
+            throw new BadAuth('Неправильные данные');
           }
           return user;
         });
@@ -40,7 +41,7 @@ module.exports.login = (req, res, next) => {
       });
       res.send({ token });
     })
-    .catch(() => next(new BadAuth('Неправильные данные')));
+    .catch((err) => next(err));
 };
 
 module.exports.getUsers = (req, res, next) => {
