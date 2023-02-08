@@ -1,7 +1,24 @@
-# react-mesto-api-full
-Репозиторий для приложения проекта `Mesto`, включающий фронтенд и бэкенд части приложения со следующими возможностями: авторизации и регистрации пользователей, операции с карточками и пользователями. Бэкенд расположите в директории `backend/`, а фронтенд - в `frontend/`. 
-  
-Repositorie: https://github.com/pahanavr/react-mesto-api-full
-IP: 84.201.172.4
-Frontend: http://mesto.pahanavr.nomoredomains.club/
-Backend: http://api.mesto.pahanavr.nomoredomains.club/
+# Project: Mesto
+
+**Description**
+
+Web service like Instagram with it's own content. Here you can change the profile name and position, add your own unique card with an image and delete it if you don't like it. You can also like/dislike the card. This website can be accessed on any device from a mobile phone to a computer. To use the service, you must register and log in with your username and password.
+
+**Frontend Tools**
+
+* HTML
+* CSS
+* BEM
+* Adaptive design
+* React
+* API
+
+**Backend Tools**
+
+* NodeJS
+* Express.js
+* MongoDB
+
+**Project status**
+
+Done.
